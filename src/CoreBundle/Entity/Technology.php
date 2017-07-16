@@ -1,0 +1,67 @@
+<?php
+
+namespace CoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\JoinColumn;
+
+/**
+ * Technology
+ *
+ * @ORM\Table(name="technology")
+ * @ORM\Entity(repositoryClass="CoreBundle\Repository\TechnologyRepository")
+ */
+class Technology
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="technology", type="string", length=255)
+     */
+    private $technology;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set technology
+     *
+     * @param string $technology
+     *
+     * @return Technology
+     */
+    public function setTechnology($technology)
+    {
+        $this->technology = $technology;
+
+        return $this;
+    }
+
+    /**
+     * Get technology
+     *
+     * @return string
+     */
+    public function getTechnology()
+    {
+        return $this->technology;
+    }
+}
