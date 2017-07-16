@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Symfony Standard Edition
 ========================
 
@@ -68,3 +69,6 @@ Enjoy!
 [12]: https://symfony.com/doc/3.2/assetic/asset_management.html
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
 # Php and Symfony Test Platform
+=======
+# TestPlatform
+>>>>>>> 0234ab2497e380788ffcb938b5e35e9034a49a2b
