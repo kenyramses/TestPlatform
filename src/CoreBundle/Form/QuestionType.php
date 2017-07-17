@@ -3,10 +3,11 @@
 namespace CoreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use CoreBundle\Form\AnswerType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class QuestionType extends AbstractType
 {
@@ -16,9 +17,17 @@ class QuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content')
+            ->add('content', TextareaType::class)
             ->add('duration')
-            ->add('questionType')
+            ->add('question_type', ChoiceType::class, array(
+                'label'     => 'Type de question',
+                'choices'   => array(
+                    'unique'    => "unique",
+                    'mulitple'  => 'multiple',
+                    'open'      => 'open'
+                ),
+                'required'  => true
+            ))
             ->add('answers', CollectionType::class, array(
                 'label' => 'Réponses',
                 'entry_type'   => AnswerType::class,

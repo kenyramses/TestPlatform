@@ -1,4 +1,4 @@
 tests:
     prefix: tests
-    type:      rest
-    resources: "@ApiBundle/Controller/TestController.php"
+    type:     rest
+    resource: "@ApiBundle/Controller/TestController.php"

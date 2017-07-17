@@ -16,7 +16,7 @@ class AnswerType extends AbstractType
     {
         $builder
             ->add('answer', TextType::class, [ 'label'=>'Réponse' ])
-            ->add('answerResult', )
+            ->add('answer_result')
             ->add('question');
     }
     
