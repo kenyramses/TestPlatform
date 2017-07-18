@@ -22,28 +22,28 @@ class Answer
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="answer", type="text")
+     * @ORM\Column(name="answer", type="text",length=255)
      */
-    private $answer;
+    protected $answer;
 
     /**
      * @var bool
      *
      * @ORM\Column(name="answer_result", type="boolean", unique=true)
      */
-    private $answerResult;
+    protected $answerResult;
 
     /**
      * @ORM\ManyToOne(targetEntity="Question", inversedBy="answers", cascade={"persist", "merge"})
      * @ORM\JoinColumn(name="question_id", referencedColumnName="id", nullable=false)
      * @var $question Question
      */
-    private $question;
+    protected $question;
 
 
     /**

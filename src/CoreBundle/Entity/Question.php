@@ -23,28 +23,28 @@ class Question
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text", unique=true)
+     * @ORM\Column(name="content", type="string", length=255)
      */
-    private $content;
+    protected $content;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="duration", type="datetime", nullable=true)
      */
-    private $duration;
+    protected $duration;
 
     /**
      * @var string
      *
      * @ORM\Column(name="question_type", type="string")
      */
-    private $questionType;
+    protected $questionType;
 
     /**
      *
