@@ -22,25 +22,25 @@ class Test
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255, unique=true)
      */
-    private $title;
+    protected $title;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\ManyToMany(targetEntity="Question", cascade={"persist"})
-     * @JoinTable(name="technicaltest_question",
+     * @JoinTable(name="test_question",
      *      joinColumns={@JoinColumn(name="test_id", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="question_id", referencedColumnName="id")}
      * )
