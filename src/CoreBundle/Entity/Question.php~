@@ -23,28 +23,28 @@ class Question
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text", unique=true)
+     * @ORM\Column(name="content", type="string", length=255)
      */
-    private $content;
+    protected $content;
 
     /**
-     * @var \DateTime
+     * @var int
      *
-     * @ORM\Column(name="duration", type="datetime", nullable=true)
+     * @ORM\Column(name="duration", type="integer", nullable=true)
      */
-    private $duration;
+    protected $duration;
 
     /**
      * @var string
      *
      * @ORM\Column(name="question_type", type="string")
      */
-    private $questionType;
+    protected $questionType;
 
     /**
      *
@@ -95,27 +95,60 @@ class Question
     }
 
     /**
-     * Set duration
+     * Set questionType
      *
-     * @param \DateTime $duration
+     * @param string $questionType
      *
      * @return Question
      */
-    public function setDuration($duration)
+    public function setQuestionType($questionType)
     {
-        $this->duration = $duration;
+        $this->questionType = $questionType;
 
         return $this;
     }
 
     /**
-     * Get duration
+     * Get questionType
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getDuration()
+    public function getQuestionType()
     {
-        return $this->duration;
+        return $this->questionType;
+    }
+
+    /**
+     * Add answer
+     *
+     * @param \CoreBundle\Entity\Answer $answer
+     *
+     * @return Question
+     */
+    public function addAnswer(\CoreBundle\Entity\Answer $answer)
+    {
+        $answer->setQuestion($this);
+        $this->getAnswers()->add($answer);
+        return $this;
+    }
+
+    /**
+     * Remove answer
+     *
+     * @param \CoreBundle\Entity\Answer $answer
+     */
+    public function removeAnswer(\CoreBundle\Entity\Answer $answer)
+    {
+        $this->answers->removeElement($answer);
+    }
+
+    /**
+     * Get answers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnswers()
+    {
+        return $this->answers;
     }
 }
-

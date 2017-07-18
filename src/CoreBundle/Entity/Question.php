@@ -33,9 +33,9 @@ class Question
     protected $content;
 
     /**
-     * @var \DateTime
+     * @var int
      *
-     * @ORM\Column(name="duration", type="datetime", nullable=true)
+     * @ORM\Column(name="duration", type="integer", nullable=true)
      */
     protected $duration;
 
@@ -95,30 +95,6 @@ class Question
     }
 
     /**
-     * Set duration
-     *
-     * @param \DateTime $duration
-     *
-     * @return Question
-     */
-    public function setDuration($duration)
-    {
-        $this->duration = $duration;
-
-        return $this;
-    }
-
-    /**
-     * Get duration
-     *
-     * @return \DateTime
-     */
-    public function getDuration()
-    {
-        return $this->duration;
-    }
-
-    /**
      * Set questionType
      *
      * @param string $questionType
@@ -174,5 +150,29 @@ class Question
     public function getAnswers()
     {
         return $this->answers;
+    }
+
+    /**
+     * Set duration
+     *
+     * @param integer $duration
+     *
+     * @return Question
+     */
+    public function setDuration($duration)
+    {
+        $this->duration = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Get duration
+     *
+     * @return integer
+     */
+    public function getDuration()
+    {
+        return $this->duration;
     }
 }

@@ -38,5 +38,4 @@ class AnswerType extends AbstractType
         return 'corebundle_answer';
     }
 
-
 }

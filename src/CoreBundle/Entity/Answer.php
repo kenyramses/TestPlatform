@@ -34,7 +34,7 @@ class Answer
     /**
      * @var bool
      *
-     * @ORM\Column(name="answer_result", type="boolean", unique=true)
+     * @ORM\Column(name="answer_result", type="boolean")
      */
     protected $answerResult;
 
