@@ -35,7 +35,8 @@ class TestType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'CoreBundle\Entity\Test'
+            'data_class' => 'CoreBundle\Entity\Test',
+            'csrf_protection' => false,
         ));
     }
 

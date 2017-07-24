@@ -1,0 +1,9 @@
+CoreBundle\Entity\Answer:
+    exclusion_policy: none
+    properties:
+        id :
+            groups : ['test', 'answer', 'question']
+        answer :
+            groups : ['test', 'answer', 'question']
+        answer_result:
+            groups : ['test', 'answer', 'question']

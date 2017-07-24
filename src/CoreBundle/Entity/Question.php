@@ -128,7 +128,7 @@ class Question
     public function addAnswer(\CoreBundle\Entity\Answer $answer)
     {
         $answer->setQuestion($this);
-        $this->getAnswers()->add($answer);
+        $this->answers->add($answer);
         return $this;
     }
 

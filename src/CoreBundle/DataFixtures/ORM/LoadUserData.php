@@ -30,6 +30,7 @@ class LoadUserData implements FixtureInterface
         $question1->setContent('what is the current version of Symfony ?');
         $question1->setDuration(30);
         $question1->setQuestionType('multiple');
+
         $question1->addAnswer($answer1);
         $question1->addAnswer($answer2);
         $question1->addAnswer($answer3);

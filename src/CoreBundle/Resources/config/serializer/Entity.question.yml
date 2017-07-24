@@ -1,0 +1,13 @@
+CoreBundle\Entity\Question:
+    exclusion_policy: none
+    properties:
+        id :
+            groups : ['test', 'question', 'answer']
+        content :
+            groups : ['test', 'question', 'answer']
+        duration:
+            groups : ['test', 'question', 'answer']
+        question_type:
+            groups : ['test', 'question', 'answer']
+        answers :
+            groups : ['test', 'answer']

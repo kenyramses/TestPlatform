@@ -1,0 +1,11 @@
+CoreBundle\Entity\Test:
+    exclusion_policy: none
+    properties:
+        id :
+            groups : ['test', 'question']
+        title :
+            groups : ['test', 'question']
+        description:
+            groups : ['test', 'question']
+        questions :
+            groups : ['test', 'answer']

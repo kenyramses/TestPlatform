@@ -47,7 +47,8 @@ class QuestionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'CoreBundle\Entity\Question'
+            'data_class' => 'CoreBundle\Entity\Question',
+            'csrf_protection' => false,
         ));
     }
 
